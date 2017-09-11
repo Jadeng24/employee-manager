@@ -152,7 +152,7 @@ This life cycle method will be called whenever the `props` for `EmployeeEditor` 
 }
 ```
 
-Let's dive into why we are using `employee` and `originalEmployee`, or in other words why a copy and a original of the same object. In JavaScript, if I set a variable equal to an already defined object they both reference the same object. For example:
+Let's dive into why we are using `employee` and `originalEmployee`, or in other words why a copy and an original of the same object. In JavaScript, if I set a variable equal to an already defined object they both reference the same object. For example:
 
 ```js
 var obj1 = {

@@ -11,13 +11,39 @@ class EmployeeEditor extends Component {
   }
 
   // componentWillReceiveProps
-
+compnentWillReceiveProps (){
+  this.setState({
+    employee: Object.assign({}, props.selected),
+    originalEmployee: props.selected,
+    notModified: true
+  })
+}
   // handleChange
-
+handleChange(props, val){
+  if(this.state.notModified){ // this is asking if its true
+    this.setState({
+      notModified: false
+    })
+  }
+}
   // save
-
+save(){
+  this.state.originalEmployee.updateName(this.state.employee.name);
+  this.state.origionalEmployee.updatePhone(this.state.employee.phone);
+  this.state.origionalEmployee.updateTitle(this.state.employee.title);
+  this.props.refreshList();
+}
   // cancel
-  
+cancel() {
+  var employeeCopy = Object.assign({},this.state.origionalEmployee)
+  this.setState({
+    employee: employeeCopy,
+    notModified: true
+  })
+}
+
+
+
   render() {
     return (
       <div className="infoCard">
